@@ -1,6 +1,4 @@
-# railway.toml - Konfigurasi untuk Tulun di Railway
-
-[build]
+﻿[build]
 builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 buildCommand = "pip install poetry && poetry install --no-interaction --no-ansi && ./manage.py migrate"
@@ -12,16 +10,3 @@ healthcheckPath = "/"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 5
-overlapSeconds = 30
-drainingSeconds = 10
-
-[deploy.cronSchedule]
-# Kosongkan jika tidak perlu cron
-
-[environments.production]
-[environments.production.deploy]
-startCommand = "gunicorn tulun.wsgi:application --bind 0.0.0.0:8008"
-
-[environments.pr]
-[environments.pr.deploy]
-startCommand = "python manage.py runserver 0.0.0.0:8008"
