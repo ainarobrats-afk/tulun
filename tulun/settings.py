@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '^)@s@cwwdo5b+1yl0cqmaqt3s89c2*
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() == 'true'
 
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1 .railway.app').split(' ')
 
 
 # Application definition
